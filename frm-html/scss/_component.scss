@@ -1,0 +1,52 @@
+.hide {
+  display: none;
+}
+
+.invisible {
+  visibility: hidden;
+}
+
+.search {
+  input {
+    display: inline-block;
+    height: 20px;
+    border: 0;
+  }
+
+}
+
+.active {
+  color: $black;
+}
+
+.li-slash-nav {
+  &:after {
+    content: "/";
+    padding: 0 5px;
+    color: $gray;
+  }
+
+  &:last-child:after {
+    content: "";
+  }
+
+  &.active {
+    color: $black;
+  }
+
+}
+
+.mask {
+  /* Background to mask */
+  background: url(https://bit.ly/ZxCkSc);
+  background-position: 0 50%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -o-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.blend-mode {
+  mix-blend-mode: multiply;
+}
