@@ -50,3 +50,49 @@
 .blend-mode {
   mix-blend-mode: multiply;
 }
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+/// Border radius
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  border-radius: $radius;
+}
+
+/// Box shadow
+@mixin box-shadow($h, $v) {
+  box-shadow: $h $v 2px 1px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: $h $v 2px 1px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: $h $v 2px 1px rgba(0, 0, 0, 0.1);
+
+}
+
+.tooltip-box {
+  @include border-radius(5px);
+  // @include box-shadow(1px, 1px);
+  position: absolute;
+  top: -28px;
+  padding: 3px;
+  white-space: nowrap;
+  border: solid 1px $light-gray;
+  background: rgba(255, 255, 255, 0.7);
+
+  &:after {
+    content: "";
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 6px 3px 0 3px;
+    border-color: $light-gray transparent transparent transparent;
+    position: absolute;
+    bottom: -7px;
+    left: 10%;
+  }
+
+}

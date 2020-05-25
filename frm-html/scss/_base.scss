@@ -1,5 +1,18 @@
 /// Variable
-$main-font-face: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif, "Sans Serif", Icons /*!System*/;
+$main-font-face: -apple-system,
+BlinkMacSystemFont,
+"Segoe UI",
+Roboto,
+Oxygen,
+Ubuntu,
+Cantarell,
+"Open Sans",
+"Helvetica Neue",
+sans-serif,
+"Sans Serif",
+Icons
+/*!System*/
+;
 $font-size-small: 0.75rem; //12px
 $font-size-medium: 1rem; //16px
 $font-size-large: 1.125rem; //18px
@@ -14,6 +27,7 @@ $scree-maxWidth: 1440px;
 .defautl-font-face {
   font-family: $main-font-face;
 }
+
 .font-size-small {
   font-size: $font-size-small;
   line-height: $line-height-small;
@@ -29,9 +43,11 @@ $scree-maxWidth: 1440px;
   line-height: $line-height-large;
 }
 
+/// Body default setting
 body {
   font-family: $main-font-face;
   font-size: $font-size-medium;
+  font-weight: 300;
   margin: 0;
   padding: 0;
 }
@@ -43,6 +59,12 @@ $menu-gray: #BDBDBD;
 $black: #000;
 
 /// Reset
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
 ul {
   list-style: none;
   margin: 0;
@@ -52,6 +74,7 @@ ul {
 a {
   color: $gray;
   text-decoration: none;
+
   &:hover {
     color: $black;
   }
@@ -63,19 +86,25 @@ a {
 }
 
 input {
-  &:focus{
-     outline: none;
+  &:focus {
+    outline: none;
   }
+
   font-size: $font-size-medium;
 }
 
 *:focus {
-    outline: none;
+  outline: none;
+}
+
+b {
+  font-weight: 300;
+  display: inline-block;
 }
 
 /// Frame 
 $frame-width: 332px;
-$frame-height: 380px;
+$frame-height: $frame-width * 1.145;
 $frame-item-w: 170px;
 $frame-item-h: 302px;
 $frame-margin: 16px;
@@ -83,8 +112,3 @@ $mb-frame-width: 194px;
 $mb-frame-height: 222px;
 $mb-frame-item-w: 99px;
 $mb-frame-item-h: 176px;
-
-
-
-
-

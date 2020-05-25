@@ -16,6 +16,10 @@
 }
 
 @media (max-width: 1024px) {
+  .disable-scroll {
+    overflow: hidden;
+  }
+
   .fix-top {
     flex-direction: row;
 
@@ -30,6 +34,11 @@
     top: 0px;
     right: 0px;
     z-index: 9999;
+    transition: transform 0.3s;
+
+    &.open {
+      transform: rotate(90deg);
+    }
   }
 
   .top-nav-wrapper {
@@ -38,6 +47,7 @@
 
   .top-nav {
     position: fixed;
+    z-index: 9998;
     top: 0;
     left: 0;
     right: 0;
@@ -135,10 +145,17 @@
   }
 }
 
+/// Mobile screen
 @media (max-width: 415px) {
   header {
-    margin:0 10px;
+    margin: 0 10px;
     height: 145px;
+  }
+
+  .logo-name {
+    font-size: $font-size-medium;
+    line-height: $line-height-medium;
+    padding-bottom: 4px;
   }
 
   .fix-top {
@@ -151,16 +168,23 @@
     margin: 15px 10px 0 10px;
   }
 
+  .edition-display, .feed-display {
+    justify-content: space-between;
+  }
+
   .edition-frame {
     width: calc(50% - 2px);
     max-width: $mb-frame-width;
     margin-right: $frame-margin/5;
     margin-bottom: 16px;
+
     &:nth-child(2n+0) {
       margin-right: 0;
     }
+
     .item {
       height: $mb-frame-height;
+
       img,
       video {
         width: calc(50% - 2px);
@@ -173,8 +197,23 @@
 
 }
 
+@media (min-width: 460px) {
+  .edition-frame {
+    flex-grow: 1;
+    flex: 1 0 20%;
+
+    .item {
+      padding-left: 24.4%;
+      padding-right: 24.4%;
+      padding-top: 11.75%;
+      padding-bottom: 11.75%;
+    }
+  }
+}
 
 @media (min-width: 1025px) {
+
+  /// Desktop top nav style
   .top-section {
     display: flex;
     flex-direction: row-reverse;
@@ -186,11 +225,16 @@
     width: 50%;
   }
 
+  .main-menu {
+    position: fixed;
+  }
+
   .top-nav {
 
     .login {
       ul {
-        margin-left: -6px;
+        // margin-left: -6px;
+        right: -15px;
       }
     }
 
@@ -202,6 +246,33 @@
 
   li.m-level-1 {
     margin-right: 5%;
+  }
+
+  ul li.m-level-1 {
+    position: relative;
+    flex-grow: 1;
+
+    &.login {
+      flex-grow: 2.75;
+      text-align: right;
+      width: 70px;
+      margin-right: 0;
+    }
+
+    &:hover {
+      ul {
+        display: block !important;
+      }
+    }
+
+    /// Sub-menu
+    ul {
+      position: absolute;
+      display: none;
+      padding-left: 20px;
+      padding-top: 2px;
+
+    }
   }
 }
 
